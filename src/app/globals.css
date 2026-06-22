@@ -1,0 +1,65 @@
+@import "tailwindcss";
+
+:root {
+  --brand-primary: #3B82F6;
+  --brand-secondary: #10B981;
+  --background: #ffffff;
+  --foreground: #111827;
+  --card: #f9fafb;
+  --card-border: #e5e7eb;
+  --muted: #6b7280;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  color: var(--foreground);
+  background: var(--background);
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: #d1d5db;
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #9ca3af;
+}
+
+/* Form builder drag styles */
+.drag-over {
+  border: 2px dashed var(--brand-primary) !important;
+  background: #eff6ff !important;
+}
+
+.dragging {
+  opacity: 0.5;
+}
+
+/* Status animations */
+@keyframes pulse-dot {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
+.pulse-dot {
+  animation: pulse-dot 2s ease-in-out infinite;
+}
+
+/* Portal branded styles */
+.portal-header {
+  background: linear-gradient(135deg, var(--brand-primary), var(--brand-secondary));
+}
+
+/* Print styles for PDF export */
+@media print {
+  nav, .no-print { display: none !important; }
+}
